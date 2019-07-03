@@ -1,0 +1,10 @@
+kubectl get namespaces
+kubectl get pods -n node-kube-apps
+kubectl exec -ti nodeapp-deploy-dd66cf777-qgf2p -n node-kube-apps -- /bin/sh
+kubectl describe pod nodeapp-deploy-dd66cf777-65qtx -n node-kube-apps
+
+kubectl describe pod nodeapp-deploy-dd66cf777-65qtx -n node-kube-apps|grep "Container ID"|awk '{print $3}'| awk -F '//' '{print $2}'|cut -c1-12
+
+
+kubectl cp /root/11.txt nodeapp-deploy-dd66cf777-65qtx:/home/Service -n node-kube-apps
+kubectl get svc -n kube-system
