@@ -14,17 +14,8 @@ echo > clientId.js
 for ((i=1;i<=$forkNum;i++))
 do
   ((sum = sum + i))
-  if [ $i = 1 ]; then
-    echo -n "\"$i\": \"" >> tmp1.js
-    
-    echo `date`$sum|md5sum|awk '{print $1}' >> tmp1.js
-  elif [ $i = $forkNum ]; then 
-    echo -n "\"$i\": \"" >> tmp1.js
-    echo `date`$sum|md5sum|awk '{print $1}'>> tmp1.js
-  else
-    echo -n "\"$i\": \"" >> tmp1.js   
-    echo `date`$sum|md5sum|awk '{print $1}' >> tmp1.js
-  fi
+  echo -n "\"$i\": \"" >> tmp1.js
+  echo `date`$sum|md5sum|awk '{print $1}'>> tmp1.js
 done
 
 sed 's/$/",/' tmp1.js >> tmp2.js
