@@ -19,7 +19,7 @@ do
 done
 
 sed 's/$/",/' tmp1.js >> tmp2.js
-echo "module.exports = {" >> clientId.js
+echo "{" >> clientId.js
 cat tmp2.js >> clientId.js
 echo "}" >> clientId.js
 rm -rf tmp1.js
