@@ -1,3 +1,5 @@
+kubectl create namespace my-namespace
+
 kubectl get namespaces
 kubectl get pods -n node-kube-apps
 kubectl exec -ti nodeapp-deploy-dd66cf777-qgf2p -n node-kube-apps -- /bin/sh
