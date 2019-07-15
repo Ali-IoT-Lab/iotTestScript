@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#自动打包并 将镜像push到仓库
 cd $1
 
 docker build -t mangseng/nodeappk8s:v$2 .
