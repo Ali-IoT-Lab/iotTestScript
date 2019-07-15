@@ -4,7 +4,8 @@ namespace=lmq-test
 passwd=Wgl,.2019
 srcPath=/root/record.txt
 desPath=/root/record.txt
-
+dbName=admin
+collectionName=testresult
 hostname=47.111.77.29
 rm -rf /root/record.txt
 
@@ -50,8 +51,7 @@ send "${passwd}\r"
 set timeout 300
 
 expect "#"
-send "mongoimport --db admin --collection contacts --file ${desPath}\r"
-
+send "mongoimport --db ${dbName} --collection ${collectionName} --file ${desPath}\r"
 expect "#"
 
 send "exit\n"
