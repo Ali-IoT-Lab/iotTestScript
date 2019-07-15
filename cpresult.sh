@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#copy测试结果到目标主机 并将结果导入mongogb
 namespace=lmq-test
 passwd=Wgl,.2019
 srcPath=/root/record.txt
